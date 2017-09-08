@@ -16,9 +16,13 @@
               }
           }]
         , ['OS == "linux"', {
-              'cflags': [
+              'cflags': [ '-mfloat-abi=hard'
               ]
-            , 'cflags!': [ '-fno-tree-vrp' ]
+            , 'cflags!': [ '-fno-tree-vrp']
+          }]
+        , ['target_arch == "armv"', {
+              'cflags': [ '-mfloat-abi=hard'
+              ]
           }]
         ]
       , "dependencies": [
